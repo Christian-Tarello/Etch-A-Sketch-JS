@@ -2,6 +2,39 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+}
+
+.toy-border{
+    margin: auto;
+    background-color: red;
+    height: 675px;
+    width: 675px;
+
+    border-radius: 16px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen{
+    height: 520px;
+    width: 520px;
+    background-color: #cacabe;
+    
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex-container {
     margin: auto;
     width: 500px;
