@@ -19,12 +19,24 @@ function startGame(container, columns) {
     container.childNodes.forEach((square) => square.addEventListener('mouseover',paintSquare));
 }
 
+function getColumns(min, max) {
+    let parsedColumns;
+
+    while (!parsedColumns || parsedColumns<min || parsedColumns>max){
+        columns = prompt(`Number of squares per side? (min: ${min}; max: ${max})`);
+        parsedColumns = parseInt(columns);
+        console.log(parsedColumns)
+    }
+
+    return parsedColumns;
+}
+
 function resetGame(container){
     while (container.firstChild){
         container.removeChild(container.firstChild);
     }
 
-    const columns = prompt("Number of squares per side?") || 16; 
+    const columns = getColumns(1,100);
 
     startGame(container, columns);
 }
