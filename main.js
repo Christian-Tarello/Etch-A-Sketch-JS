@@ -1,5 +1,3 @@
-const container = document.querySelector(".flex-container");
-
 function drawGrid(container, columns = 16) {
     const totalSquares = Math.pow(columns, 2);
     const squarePercentage = 100/columns;
@@ -12,4 +10,11 @@ function drawGrid(container, columns = 16) {
     }
 }
 
+function paintSquare(event) {
+    event.target.style.backgroundColor = '#000000';
+}
+
+
+const container = document.querySelector(".flex-container");
 drawGrid(container, 16);
+container.childNodes.forEach((square) => square.addEventListener('mouseover',paintSquare));
