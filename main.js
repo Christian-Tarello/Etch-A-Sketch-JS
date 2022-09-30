@@ -14,7 +14,29 @@ function paintSquare(event) {
     event.target.style.backgroundColor = '#000000';
 }
 
+function resetGame(container){
+    while (container.firstChild){
+        container.removeChild(container.firstChild);
+    }
+
+    const columns = prompt("Number of squares per side?");
+
+    drawGrid(container, columns);
+    container.childNodes.forEach((square) => square.addEventListener('mouseover',paintSquare));
+
+}
+
 
 const container = document.querySelector(".flex-container");
+
 drawGrid(container, 16);
+
 container.childNodes.forEach((square) => square.addEventListener('mouseover',paintSquare));
+
+const shakeButton = document.querySelector(".shake-button");
+shakeButton.addEventListener("click", () => {resetGame(container)}, false);
+
+
+
+
+
