@@ -14,24 +14,25 @@ function paintSquare(event) {
     event.target.style.backgroundColor = '#000000';
 }
 
+function startGame(container, columns) {
+    drawGrid(container, columns);
+    container.childNodes.forEach((square) => square.addEventListener('mouseover',paintSquare));
+}
+
 function resetGame(container){
     while (container.firstChild){
         container.removeChild(container.firstChild);
     }
 
-    const columns = prompt("Number of squares per side?");
+    const columns = prompt("Number of squares per side?") || 16; 
 
-    drawGrid(container, columns);
-    container.childNodes.forEach((square) => square.addEventListener('mouseover',paintSquare));
-
+    startGame(container, columns);
 }
 
 
 const container = document.querySelector(".flex-container");
 
-drawGrid(container, 16);
-
-container.childNodes.forEach((square) => square.addEventListener('mouseover',paintSquare));
+startGame(container, 16);
 
 const shakeButton = document.querySelector(".shake-button");
 shakeButton.addEventListener("click", () => {resetGame(container)}, false);
