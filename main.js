@@ -7,6 +7,7 @@ function drawGrid(container, columns = 16) {
     for (let i = 0; i<(totalSquares); i++) {
         const square = document.createElement("div");
         square.style.flex =`1 1 ${squarePercentage}%`;
+        square.classList.add("square")
         container.appendChild(square);
     }
 }

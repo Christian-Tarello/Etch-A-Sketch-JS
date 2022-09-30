@@ -9,3 +9,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.square {
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
