@@ -10,7 +10,20 @@ function drawGrid(container, columns = 16) {
 }
 
 function paintSquare(event) {
-    event.target.style.backgroundColor = '#000000';
+    const STARTING_BRIGHTNESS = 100;
+
+    if (!event.target.style.backgroundColor) {
+        randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+        event.target.dataset.brightness = STARTING_BRIGHTNESS;
+        event.target.style.backgroundColor = "#"+randomColor;
+        event.target.style.filter = `brightness(${event.target.dataset.brightness}%)`
+    } else {
+        const currentBrightness = event.target.dataset.brightness;
+
+        event.target.dataset.brightness = currentBrightness <= 10 ? 0: currentBrightness-10;
+        event.target.style.filter = `brightness(${event.target.dataset.brightness}%)`
+    }
 }
 
 function startGame(container, columns) {
