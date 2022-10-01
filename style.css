@@ -33,8 +33,6 @@ h1{
 
     color: gold;
 
-    position: relative;
-
     margin: 15px;
 }
 
@@ -47,14 +45,9 @@ h1{
 
     color: gold;
     font-family: 'Silkscreen', 'Times New Roman', Times, serif;
+    font-size: larger;
 
-    position: absolute;
-    right: 500px;
-
-    padding: 20px 2px;
-
-
-
+    padding: 20px 100px;
 }
 
 .screen{
